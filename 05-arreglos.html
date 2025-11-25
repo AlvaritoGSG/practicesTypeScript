@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Type Script practices</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./styles/05-style.css">
+    <script src="./scripts/05-arreglos.js" defer></script>
+</head>
+
+<body class="">
+    <header class="row bg-body-tertiary mb-2 flex-grow-0">
+        <nav class="navbar navbar-expand-md -position-fixed -w-100 pe-md-4">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="./index.html">
+                    <i class="fas fa-home"></i>
+                    Prácticas TS
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <!-- Bases -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Bases
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="./01-iniciando.html">iniciando</a></li>
+                            <li><a class="dropdown-item" href="./02-calculadora.html">Calculadora</a></li>
+                            <li><a class="dropdown-item" href="./03-bucleFor.html">Bucle For</a></li>
+                            <li><a class="dropdown-item" href="./04-funciones.html">Funciones</a></li>
+                            <li><a class="dropdown-item" href="./05-arreglos.html">Arreglos</a></li>
+                        </ul>
+                    </li>
+                    <!-- Ejercicios -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Ejercicios
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="./06-sumaUOracion.html">Suma-Oración</a></li>
+                            <li><a class="dropdown-item" href="#">Piedra-papel-tijera</a></li>
+                            <li><a class="dropdown-item" href="#">Notas-rango</a></li>
+                            <li><a class="dropdown-item" href="#">lista-colores</a></li>
+                            <li><a class="dropdown-item" href="#">Banderas</a></li>
+                            <li><a class="dropdown-item" href="#">Películas</a></li>
+                            <li><a class="dropdown-item" href="#">JuegoColor</a></li>
+                            <li><a class="dropdown-item" href="#">Dados</a></li>
+                            <li><a class="dropdown-item" href="#">Mayor número</a></li>
+                            <li><a class="dropdown-item" href="#">Media&Mediana</a></li>
+                            <li><a class="dropdown-item" href="#">Ordenamiento</a></li>
+                            <li><a class="dropdown-item" href="#">PromedioLista</a></li>
+                            <li><a class="dropdown-item" href="#">Buscador</a></li>
+                            <li><a class="dropdown-item" href="#">Objetos</a></li>
+                        </ul>
+                    </li>
+                    <!-- Proyectos -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Proyectos
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Cine Web</a></li>
+                            <li><a class="dropdown-item" href="#">Sistema Ventas</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <section class="row bg-primary d-flex flex-grow-1">
+        <div class="col-12">
+            <h1 class="h1 text-light text-center py-2 my-2">Funciones con TS</h1>
+        </div>
+        <aside class="bg-danger col-12 col-md-3">
+            <ul class="list-group m-0 p-3">
+                <li data-option="fruitsCard" class="list-group-item list-group-item-action p-0 m-0">
+                    <a href="#fruitsCard" class="p-2 d-block w-100 rounded-2"> Frutas </a>
+                </li>
+                <li data-option="countriesCard" class="list-group-item list-group-item-action p-0 m-0">
+                    <a href="#countriesCard" class="p-2 d-block w-100 rounded-2"> País / Ciudad capital </a>
+                </li>
+            </ul>
+        </aside>
+        <main class="bg-warning col-12 col-md-9">
+            <section class="text-light bg-success">
+                <!-- CRUD de Frutas -->
+                <article class="card m-5 d-none" id="fruitsCard">
+                    <header class="card-header bg-secondary-subtle">
+                        <h1 class="card-title">Lista de Frutas favoritas</h1>
+                    </header>
+                    <form action="" class="card-body">
+                        <div class="row">
+                            <label for="inputFruit" class="col-12 col-md-8 my-1">¿Cuál es tu fruta favorita?
+                                <input type="text" id="inputFruit" class="form-control" placeholder="Fruta del dragón"
+                                    aria-describedby="Favorit fruit name input">
+                                <small class="form-text mx-2">
+                                    Escribe el nombre de alguna fruta.
+                                </small>
+                            </label>
+                            <div class="col-12 col-md-4 my-1 text-center">
+                                <button type="button" class="btn btn-success">Agregar</button>
+                                <button type="button" class="btn btn-warning" hidden>Actualizar</button>
+                            </div>
+                        </div>
+                    </form>
+                    <footer class="card-footer">
+                        <!-- <output></output> -->
+                        <ul class="list-group m-2">
+                            <li class="list-group-item list-group-item-action d-flex justify-content-between">
+                                ítem 1
+                                <div class="mx-1">
+                                    <i class="far fa-edit text-warning px-1"></i>
+                                    <i class="far fa-trash-alt text-danger mx-1 px-1"></i>
+                                </div>
+                            </li>
+                            <li class="list-group-item list-group-item-action d-flex justify-content-between">
+                                ítem n
+                                <div class="mx-1">
+                                    <i class="far fa-edit text-warning px-1"></i>
+                                    <i class="far fa-trash-alt text-danger mx-1 px-1"></i>
+                                </div>
+                            </li>
+                        </ul>
+                    </footer>
+                </article>
+                <!-- CRUD de Países y sus capitales -->
+                <article class="card m-5 d-none" id="ccCard">
+                    <header class="card-header bg-secondary-subtle">
+                        <h1 class="card-title">Lista de Países y sus capitales</h1>
+                    </header>
+                    <form action="" class="card-body">
+                        <div class="row">
+                            <label for="inputCountry" class="col-12 col-md-6 my-1">País
+                                <input type="text" id="inputCountry" class="form-control" placeholder="Estados Unidos"
+                                    aria-describedby="Country name input">
+                                <small class="form-text" id="inputCountryHelp">
+                                    Escribe el nombre del país.
+                                </small>
+                            </label>
+                            <label for="inputCity" class="col-12 col-md-6 my-1">Ciudad capital
+                                <input type="text" id="inputCity" class="form-control" placeholder="Washington D.C."
+                                    aria-describedby="Capital city name input">
+                                <small class="form-text" id="inputCapitalHelp">
+                                    Escribe el nombre de su ciudad capital.
+                                </small>
+                            </label>
+                            <div class="col-12 my-1 text-center">
+                                <button type="button" class="btn btn-success">Agregar</button>
+                                <div class="d-flex justify-content-center gap-2">
+                                    <button type="button" class="btn btn-warning" hidden>Actualizar</button>
+                                    <button type="button" class="btn btn-outline-danger" hidden>Cancelar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <footer class="card-footer">
+                        <ul class="list-group m-2">
+                            <li class="list-group-item list-group-item-action d-flex justify-content-between">
+                                Ítem 1a - Ítem 1b
+                                <div class="mx-1">
+                                    <button class="far fa-edit text-warning px-1"></button>
+                                    <button class="far fa-trash-alt text-danger mx-1 px-1"></button>
+                                </div>
+                            </li>
+                            <li class="list-group-item list-group-item-action d-flex justify-content-between">
+                                Ítem 2a - Ítem 2b
+                                <div class="mx-1">
+                                    <i class="far fa-edit text-warning px-1"></i>
+                                    <i class="far fa-trash-alt text-danger mx-1 px-1"></i>
+                                </div>
+                            </li>
+                        </ul>
+                    </footer>
+                </article>
+            </section>
+        </main>
+    </section>
+    <footer class="row bg-body-tertiary flex-grow-0">
+        <div class="col-12 text-center text-dark pt-3">
+            <p>2025 prácticas Type Script en desarrollo web.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

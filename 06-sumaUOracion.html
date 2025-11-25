@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Type Script practices</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./styles/05-style.css">
+    <script src="./scripts/06-sumaUOracion.js" defer></script>
+</head>
+
+<body class="">
+    <header class="row bg-body-tertiary mb-2 flex-grow-0">
+        <nav class="navbar navbar-expand-md -position-fixed -w-100 pe-md-4">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="./index.html">
+                    <i class="fas fa-home"></i>
+                    Prácticas TS
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <!-- Bases -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Bases
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="./01-iniciando.html">iniciando</a></li>
+                            <li><a class="dropdown-item" href="./02-calculadora.html">Calculadora</a></li>
+                            <li><a class="dropdown-item" href="./03-bucleFor.html">Bucle For</a></li>
+                            <li><a class="dropdown-item" href="./04-funciones.html">Funciones</a></li>
+                            <li><a class="dropdown-item" href="./05-arreglos.html">Arreglos</a></li>
+                        </ul>
+                    </li>
+                    <!-- Ejercicios -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Ejercicios
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="./06-sumaUOracion.html">Suma-Oración</a></li>
+                            <li><a class="dropdown-item" href="#">Piedra-papel-tijera</a></li>
+                            <li><a class="dropdown-item" href="#">Notas-rango</a></li>
+                            <li><a class="dropdown-item" href="#">lista-colores</a></li>
+                            <li><a class="dropdown-item" href="#">Banderas</a></li>
+                            <li><a class="dropdown-item" href="#">Películas</a></li>
+                            <li><a class="dropdown-item" href="#">JuegoColor</a></li>
+                            <li><a class="dropdown-item" href="#">Dados</a></li>
+                            <li><a class="dropdown-item" href="#">Mayor número</a></li>
+                            <li><a class="dropdown-item" href="#">Media&Mediana</a></li>
+                            <li><a class="dropdown-item" href="#">Ordenamiento</a></li>
+                            <li><a class="dropdown-item" href="#">PromedioLista</a></li>
+                            <li><a class="dropdown-item" href="#">Buscador</a></li>
+                            <li><a class="dropdown-item" href="#">Objetos</a></li>
+                        </ul>
+                    </li>
+                    <!-- Proyectos -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Proyectos
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Cine Web</a></li>
+                            <li><a class="dropdown-item" href="#">Sistema Ventas</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <section class="row bg-primary d-flex flex-grow-1">
+        <div class="col-12">
+            <h1 class="h1 text-light text-center py-2 my-2">Funciones con TS</h1>
+        </div>
+        <main class="bg-warning col-12 col-md-8 mx-auto my-2 rounded-3">
+            <section class="text-light bg-success">
+                <!-- CRUDs Numbers o Strings -->
+                <article class="card m-5" id="nsCard">
+                    <header class="card-header bg-secondary-subtle">
+                        <h1 class="card-title">¿Suma u Oración?</h1>
+                    </header>
+                    <form action="" class="card-body">
+                        <div class="row">
+                            <label for="input" class="col-12 col-md-8 my-1">Número o Palabra:
+                                <input type="text" id="input" class="form-control" placeholder="Treinta o 5"
+                                    aria-describedby="Number o string input">
+                                <small class="form-text mx-2">
+                                    Escribe un número o una palabra.
+                                </small>
+                            </label>
+                            <div
+                                class="col-12 col-md-4 my-1 text-center d-flex align-items-center justify-content-center">
+                                <button type="submit" class="btn btn-success">Agregar</button>
+                            </div>
+                        </div>
+                    </form>
+                    <footer class="card-footer">
+                        <div class="d-flex justify-content-center p-2 rounded-3 row">
+                            <!-- Aquí se mostrará la suma de los números o la oración de las palabras. -->
+                            <article class="d-flex justify-content-between col-12 col-md-6">
+                                <p>
+                                    <span class="h6 text-primary ">SUMA: </span>
+                                    <output class="badge rounded-pill text-bg-info fs-6"></output>
+                                </p>
+                                <button class="btn btn-sm btn-danger small align-self-sm-end mb-2">
+                                    <i class="far fa-trash-alt"></i> Limpiar
+                                </button>
+                            </article>
+                            <article class="d-flex justify-content-between col-12 col-md-6">
+                                <p>
+                                    <span class="h6 text-primary ">ORACIÓN: </span>
+                                    <output
+                                        class="badge rounded-pill text-bg-info d-block text-wrap lh-lg p-2"></output>
+                                </p>
+                                <button class="btn btn-sm btn-danger small align-self-sm-end mb-2">
+                                    <i class="far fa-trash-alt"></i> Limpiar
+                                </button>
+                            </article>
+                        </div>
+                    </footer>
+                </article>
+            </section>
+        </main>
+    </section>
+    <footer class="row bg-body-tertiary flex-grow-0">
+        <div class="col-12 text-center text-dark pt-3">
+            <p>2025 prácticas Type Script en desarrollo web.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

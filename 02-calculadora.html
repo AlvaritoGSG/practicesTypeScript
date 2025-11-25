@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Type Script practices</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="./styles/02-style.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
+
+    <script defer src="./scripts/02-calculadora.js"></script>
+</head>
+
+<body class="bg-success-subtle">
+    <header>
+        <nav class="navbar bg-body-tertiary navbar-expand-md">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="./index.html">
+                    <i class="fas fa-home"></i>
+                    Prácticas TS
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <!-- Bases -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Bases
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="./01-iniciando.html">iniciando</a></li>
+                            <li><a class="dropdown-item" href="./02-calculadora.html">Calculadora</a></li>
+                            <li><a class="dropdown-item" href="./03-bucleFor.html">Bucle For</a></li>
+                            <li><a class="dropdown-item" href="./04-funciones.html">Funciones</a></li>
+                            <li><a class="dropdown-item" href="./05-arreglos.html">Arreglos</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main class="container">
+        <div class="row d-flex align-items-center justify-content-center" style="height: 89vh;">
+            <div class="col-12 col-md-8 offset-md-2">
+                <article class="card">
+                    <header class="card-header bg-success text-white text-center">
+                        <h1>Calculadora</h1>
+                    </header>
+                    <div class="card-body">
+                        <div class="offset-sm-2 col-sm-8 bg-success-subtle my-3">
+                            <h6>Operaciones matemáticas básicas de Java Script</h6>
+                            <div class="offset-sm-1">
+                                <p class="m-0 p-1">
+                                    <span class="text-danger">* </span>
+                                    Ingrese los valores con que desee operar
+                                </p>
+                                <p class="m-0 p-1">
+                                    <span class="text-danger">* </span>
+                                    Seleccione la operación a realizar
+                                </p>
+                                <p class="m-0 p-1">
+                                    <span class="text-danger">* </span>
+                                    Por último, presione ¡Calcular!
+                                </p>
+                            </div>
+                        </div>
+                        <form action="" class="row d-felx flex-row align-items-betwend">
+                            <div class="mb-3 col-12 offset-sm-1 col-sm-4 text-center">
+                                <label for="number-1" class="form-label">1er número</label>
+                                <input type="number" class="form-control" id="number-1">
+                            </div>
+                            <div class="mb-3 col-4 offset-4 col-sm-2 offset-sm-0 text-center">
+                                <label for="operator" class="form-label">Operación</label>
+                                <select name="operator_js" id="operator"
+                                    class="form-select form-select-sm text-center px-0 m-0"
+                                    aria-label="selector de operación matemática">
+                                    <option value="" selected disabled hidden></option>
+                                    <option value="addition"> + </option>
+                                    <option value="subtraction"> - </option>
+                                    <option value="multiplication"> * </option>
+                                    <option value="division"> ÷ </option>
+                                    <option value="exponent"> ^ </option>
+                                    <option value="modulus"> % </option>
+                                </select>
+                            </div>
+                            <div class="mb-3 col-12 col-sm-4 text-center">
+                                <label for="number-2" class="form-label">2do número</label>
+                                <input type="number" class="form-control" id="number-2">
+                            </div>
+                            <div class="text-center d-felx flex-row justify-content-around">
+                                <button type="button" class="btn btn-lg btn-success mx-2"
+                                    onclick="calculate()">¡Calcular!</button>
+                            </div>
+                        </form>
+                    </div>
+                    <footer class="col-12 card-footer">
+                        <p class="alert alert-success text-center" id="blockResult">Esperando datos.</p>
+                    </footer>
+                </article>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
