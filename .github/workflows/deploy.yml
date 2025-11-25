@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main   # cada vez que hagas push a main
+      - main
 
 jobs:
   deploy:
@@ -12,9 +12,6 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
-
-      # Si ya tienes compilación TS → public, no necesitas build extra
-      # Si quisieras compilar aquí, podrías añadir npm install && npm run build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
