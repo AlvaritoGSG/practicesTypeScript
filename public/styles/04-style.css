@@ -1,0 +1,10 @@
+.list-group-item:hover {
+    cursor: pointer;
+    background-color: azure;
+}
+
+.list-group-item.selected {
+    /* background-color: azure; */
+    font-weight: bold;
+    color: black;
+}
