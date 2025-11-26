@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Type Script practices</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./styles/07-piedraPapelTijera.css">
+    <script src="./scripts/07-piedraPapelTijera.js" defer></script>
+</head>
+
+<body class="">
+    <header class="row bg-body-tertiary mb-2 flex-grow-0">
+        <nav class="navbar navbar-expand-md -position-fixed -w-100 pe-md-4">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="./index.html">
+                    <i class="fas fa-home"></i>
+                    Prácticas TS
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <!-- Bases -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Bases
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="./01-iniciando.html">iniciando</a></li>
+                            <li><a class="dropdown-item" href="./02-calculadora.html">Calculadora</a></li>
+                            <li><a class="dropdown-item" href="./03-bucleFor.html">Bucle For</a></li>
+                            <li><a class="dropdown-item" href="./04-funciones.html">Funciones</a></li>
+                            <li><a class="dropdown-item" href="./05-arreglos.html">Arreglos</a></li>
+                        </ul>
+                    </li>
+                    <!-- Ejercicios -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Ejercicios
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="./06-sumaUOracion.html">Suma-Oración</a></li>
+                            <li><a class="dropdown-item" href="./07-piedraPapelTijera.html">Piedra-papel-tijera</a></li>
+                            <li><a class="dropdown-item" href="#">Notas-rango</a></li>
+                            <li><a class="dropdown-item" href="#">lista-colores</a></li>
+                            <li><a class="dropdown-item" href="#">Banderas</a></li>
+                            <li><a class="dropdown-item" href="#">Películas</a></li>
+                            <li><a class="dropdown-item" href="#">JuegoColor</a></li>
+                            <li><a class="dropdown-item" href="#">Dados</a></li>
+                            <li><a class="dropdown-item" href="#">Mayor número</a></li>
+                            <li><a class="dropdown-item" href="#">Media&Mediana</a></li>
+                            <li><a class="dropdown-item" href="#">Ordenamiento</a></li>
+                            <li><a class="dropdown-item" href="#">PromedioLista</a></li>
+                            <li><a class="dropdown-item" href="#">Buscador</a></li>
+                            <li><a class="dropdown-item" href="#">Objetos</a></li>
+                        </ul>
+                    </li>
+                    <!-- Proyectos -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Proyectos
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Cine Web</a></li>
+                            <li><a class="dropdown-item" href="#">Sistema Ventas</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <section class="row bg-primary d-flex flex-grow-1">
+        <div class="col-12">
+            <h1 class="h1 text-light text-center py-2 my-2">Funciones con TS</h1>
+        </div>
+        <main class="bg-warning col-12 col-xl-8 mx-auto rounded-3">
+            <section class="text-light bg-success">
+                <article class="card m-2" id="rpsCard">
+                    <header class="card-header bg-secondary-subtle">
+                        <h1 class="card-title text-center">
+                            <i class="fas fa-gamepad mx-2 mx-xl-4"></i>
+                            Piedra, Papel o Tijera
+                            <i class="fas fa-gamepad mx-4 d-none d-xl-inline"></i>
+                        </h1>
+                    </header>
+                    <section class="card-body">
+                        <div id="helperContainer">
+                            <p class="fs-5 text-end fst-italic">
+                                <span class="text-info">*</span>Juegas contra tu PC.
+                            </p>
+                            <div class="d-flex flex-column flex-md-row g-0 m-4 d-none" id="resultContainer">
+                                <p class="flex-grow-1 text-center alert alert-info m-0 p-4
+                                rounded-0 rounded-top-5 rounded-md-0 rounded-md-start-5" id="selectedHelper">
+                                    La elección de tu PC fue: <output class="fw-bold mx-2 fs-5">PAPEL</output>
+                                    <br>
+                                    Tú haz seleccionado: <output class="mx-2">PIEDRA</output>
+                                </p>
+                                <output class="flex-grow-1 text-center bg-danger m-0 p-4 fs-1 fw-bolder text-light
+                                    rounded-0 rounded-bottom-5 rounded-md-0 rounded-md-end-5" id="resultOutput">
+                                    <!-- ¡El GANADOR ERES TÚ! -->
+                                    <!-- ¡Es un EMPATE! -->
+                                    ¡El GANADOR ES TU PC!
+                                </output>
+                            </div>
+                        </div>
+                        <form class="formActions">
+                            <p class="fs-4">Selecciona una opción:</p>
+                            <div class="d-flex btn-group" role="group">
+                                <button class="btn btn-lg btn-dark p-2 rounded-start-pill" id="rockOption">
+                                    <i class="fas fa-hand-rock fs-1 p-3"></i>
+                                </button>
+                                <button class="btn btn-lg btn-light p-2" id="paperOption">
+                                    <i class="fas fa-hand-paper fs-1 p-3"></i>
+                                </button>
+                                <button class="btn btn-lg btn-warning p-2 rounded-end-pill" id="scissorsOption">
+                                    <i class="fas fa-hand-scissors fs-1 p-3"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </section>
+                    <footer class="card-footer">
+                        <div class="d-flex justify-content-center p-2 rounded-3 row">
+                            <!-- Historia y/o marcador -->
+                            <table class="table">
+                                <thead class="table-dark text-center">
+                                    <tr>
+                                        <td colspan="2" class="h2">Total Ganadas</td>
+                                    </tr>
+                                    <tr class="fs-3">
+                                        <th>
+                                            <i class="far fa-user"></i>
+                                            <output class="badge rounded-pill text-bg-light mx-2"> 3</output>
+                                        </th>
+                                        <th>
+                                            <i class="fas fa-desktop"></i>
+                                            <output class="badge rounded-pill text-bg-light mx-2"> 2</output>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-center d-none">
+                                    <tr>
+                                        <td>1</td>
+                                        <td>0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>2</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>2</td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr class="table-secondary text-center">
+                                        <td class="fs-4">Empates:
+                                            <output class="badge rounded-pill text-bg-light">2</output>
+                                        </td>
+                                        <td>
+                                            <button type="button" class="btn btn-lg btn-danger"><i
+                                                    class="fas fa-recycle"></i>
+                                                Limpiar</button>
+                                        </td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </footer>
+                </article>
+            </section>
+        </main>
+    </section>
+    <footer class="row bg-body-tertiary flex-grow-0">
+        <div class="col-12 text-center text-dark pt-3">
+            <p>2025 prácticas Type Script en desarrollo web.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
