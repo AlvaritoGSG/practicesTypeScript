@@ -1,0 +1,79 @@
+/* Por defecto (móvil): botones fijos al pie */
+#rpsCard .formActions {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: lightblue;
+    border-start-start-radius: 2rem;
+    border-start-end-radius: 2rem;
+}
+
+#rpsCard .formActions p {
+    margin: 0.5rem 0;
+    padding: 0;
+    text-align: center;
+}
+
+#rpsCard .btn-group .btn {
+    border-radius: 0 !important;
+    flex: 1;
+}
+
+#rpsCard .card-body {
+    padding-bottom: 0;
+}
+
+
+@media (min-width: 768px) {
+
+    /* Redondeos responsivos carentes de Bootstrap5: */
+    .rounded-md-0 {
+        border-radius: 0 !important;
+    }
+
+    .rounded-md-start-5 {
+        border-start-start-radius: 2rem !important;
+        border-end-start-radius: 2rem !important;
+    }
+
+    .rounded-md-end-5 {
+        border-start-end-radius: 2rem !important;
+        border-end-end-radius: 2rem !important;
+    }
+
+    /* Restaurar disposición normal de los botones */
+    #rpsCard .formActions {
+        position: static;
+        width: auto;
+        z-index: auto;
+        background-color: transparent;
+        padding: 0;
+        border-radius: 0 !important;
+    }
+
+    /* Restaurar bordes redondeados específicos para cada botón */
+    #rpsCard .btn-group .btn:first-child {
+        border-start-start-radius: 2rem !important;
+        border-end-start-radius: 2rem !important;
+        border-start-end-radius: 0 !important;
+        border-end-end-radius: 0 !important;
+    }
+
+    #rpsCard .btn-group .btn:last-child {
+        border-start-end-radius: 2rem !important;
+        border-end-end-radius: 2rem !important;
+        border-start-start-radius: 0 !important;
+        border-end-start-radius: 0 !important;
+    }
+
+    #rpsCard .btn-group .btn:not(:first-child):not(:last-child) {
+        border-radius: 0 !important;
+    }
+
+    #rpsCard .card-body {
+        padding-bottom: inherit;
+    }
+}
