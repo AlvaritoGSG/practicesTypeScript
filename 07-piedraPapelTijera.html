@@ -121,15 +121,18 @@
                             </div>
                         </div>
                         <form class="formActions">
+                            <!-- Esta etiqueta me estuvo jugando una mal pasada, tiene el submit por defecto. (Envia y recarga la página) prevenir dicho comportamiento con TS. y/o en este caso Recordar, poner type="button" en los botones fue que soluciono mi problema. -->
                             <p class="fs-4">Selecciona una opción:</p>
                             <div class="d-flex btn-group" role="group">
-                                <button class="btn btn-lg btn-dark p-2 rounded-start-pill" id="rockOption">
+                                <button class="btn btn-lg btn-dark p-2 rounded-start-pill" id="rockOption"
+                                    type="button">
                                     <i class="fas fa-hand-rock fs-1 p-3"></i>
                                 </button>
-                                <button class="btn btn-lg btn-light p-2" id="paperOption">
+                                <button class="btn btn-lg btn-light p-2" id="paperOption" type="button">
                                     <i class="fas fa-hand-paper fs-1 p-3"></i>
                                 </button>
-                                <button class="btn btn-lg btn-warning p-2 rounded-end-pill" id="scissorsOption">
+                                <button class="btn btn-lg btn-warning p-2 rounded-end-pill" type="button"
+                                    id="scissorsOption">
                                     <i class="fas fa-hand-scissors fs-1 p-3"></i>
                                 </button>
                             </div>
