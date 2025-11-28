@@ -105,6 +105,22 @@
                             <p class="fs-5 text-end fst-italic">
                                 <span class="text-info">*</span>Juegas contra tu PC.
                             </p>
+                            <form class="formActions">
+                                <p class="fs-4">Selecciona una opción:</p>
+                                <div class="d-flex btn-group" role="group">
+                                    <button class="btn btn-lg btn-dark p-2 rounded-start-pill" id="rockOption"
+                                        type="button">
+                                        <i class="fas fa-hand-rock fs-1 p-3"></i>
+                                    </button>
+                                    <button class="btn btn-lg btn-light p-2" id="paperOption" type="button">
+                                        <i class="fas fa-hand-paper fs-1 p-3"></i>
+                                    </button>
+                                    <button class="btn btn-lg btn-warning p-2 rounded-end-pill" type="button"
+                                        id="scissorsOption">
+                                        <i class="fas fa-hand-scissors fs-1 p-3"></i>
+                                    </button>
+                                </div>
+                            </form>
                             <div class="d-flex flex-column flex-md-row g-0 m-4 d-none" id="resultContainer">
                                 <p class="flex-grow-1 text-center alert alert-info m-0 p-4
                                 rounded-0 rounded-top-5 rounded-md-0 rounded-md-start-5" id="selectedHelper">
@@ -120,93 +136,68 @@
                                 </output>
                             </div>
                         </div>
-                        <form class="formActions">
-                            <!-- Esta etiqueta me estuvo jugando una mal pasada, tiene el submit por defecto. (Envia y recarga la página) prevenir dicho comportamiento con TS. y/o en este caso Recordar, poner type="button" en los botones fue que soluciono mi problema. -->
-                            <p class="fs-4">Selecciona una opción:</p>
-                            <div class="d-flex btn-group" role="group">
-                                <button class="btn btn-lg btn-dark p-2 rounded-start-pill" id="rockOption"
-                                    type="button">
-                                    <i class="fas fa-hand-rock fs-1 p-3"></i>
-                                </button>
-                                <button class="btn btn-lg btn-light p-2" id="paperOption" type="button">
-                                    <i class="fas fa-hand-paper fs-1 p-3"></i>
-                                </button>
-                                <button class="btn btn-lg btn-warning p-2 rounded-end-pill" type="button"
-                                    id="scissorsOption">
-                                    <i class="fas fa-hand-scissors fs-1 p-3"></i>
-                                </button>
-                            </div>
-                        </form>
+
                     </section>
-                    <footer class="card-footer">
-                        <div class="d-flex justify-content-center p-2 rounded-3 row">
-                            <!-- Historia y/o marcador -->
-                            <table class="table">
-                                <thead class="table-dark text-center">
-                                    <tr>
-                                        <td colspan="2" class="h2">Total Ganadas</td>
-                                    </tr>
-                                    <tr class="fs-3">
-                                        <th>
-                                            <i class="far fa-user"></i>
-                                            <output class="badge rounded-pill text-bg-light mx-2"> 3</output>
-                                        </th>
-                                        <th>
-                                            <i class="fas fa-desktop"></i>
-                                            <output class="badge rounded-pill text-bg-light mx-2"> 2</output>
-                                        </th>
-                                    </tr>
-                                </thead>
-                                <tbody class="text-center d-none">
-                                    <tr>
+                    <footer class="card-footer mb-4">
+                        <!-- Historia y/o marcador -->
+                        <table class="table mb-4" id="scoreContainer">
+                            <thead class="table-dark text-center">
+                                <tr>
+                                    <td colspan="3" class="h2">Total partidas Ganadas</td>
+                                </tr>
+                                <tr class="fs-3">
+                                    <th scope="colgroup">N° Partida</th>
+                                    <th scope="colgroup">
+                                        <i class="far fa-user"></i>
+                                        <output class="badge rounded-pill text-bg-light mx-2"> 2</output>
+                                    </th>
+                                    <th scope="colgroup">
+                                        <i class="fas fa-desktop"></i>
+                                        <output class="badge rounded-pill text-bg-light mx-2"> 1</output>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-center d-none">
+                                <!-- <tr>
+                                        <th scope="row">1</th>
                                         <td>1</td>
                                         <td>0</td>
                                     </tr>
                                     <tr>
+                                        <th scope="row">2</th>
                                         <td>1</td>
                                         <td>0</td>
                                     </tr>
                                     <tr>
+                                        <th scope="row">3</th>
                                         <td>1</td>
                                         <td>1</td>
                                     </tr>
                                     <tr>
-                                        <td>1</td>
-                                        <td>1</td>
-                                    </tr>
-                                    <tr>
+                                        <th scope="row">3</th>
                                         <td>2</td>
                                         <td>1</td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>2</td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td>2</td>
-                                    </tr>
-                                </tbody>
-                                <tfoot>
-                                    <tr class="table-secondary text-center">
-                                        <td class="fs-4">Empates:
-                                            <output class="badge rounded-pill text-bg-light">2</output>
-                                        </td>
-                                        <td>
-                                            <button type="button" class="btn btn-lg btn-danger"><i
-                                                    class="fas fa-recycle"></i>
-                                                Limpiar</button>
-                                        </td>
-                                    </tr>
-                                </tfoot>
-                            </table>
-                        </div>
+                                    </tr> -->
+                            </tbody>
+                            <tfoot>
+                                <tr class="table-secondary text-center">
+                                    <td colspan="2" class="fs-4">Empates:
+                                        <output class="badge rounded-pill text-bg-light">1</output>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-lg btn-danger">
+                                            <i class="fas fa-recycle"></i> Limpiar
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        </table>
                     </footer>
                 </article>
             </section>
         </main>
     </section>
-    <footer class="row bg-body-tertiary flex-grow-0">
+    <footer class="row bg-body-tertiary flex-grow-0 mt-3">
         <div class="col-12 text-center text-dark pt-3">
             <p>2025 prácticas Type Script en desarrollo web.</p>
         </div>
