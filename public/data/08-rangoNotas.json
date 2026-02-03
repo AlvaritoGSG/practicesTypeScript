@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "nombre": "Ana García",
+    "nota": null
+  },
+  {
+    "id": 2,
+    "nombre": "Luis Pérez",
+    "nota": null
+  },
+  {
+    "id": 3,
+    "nombre": "Marta Soto",
+    "nota": 9.1
+  },
+  {
+    "id": 4,
+    "nombre": "Carlos Gómez",
+    "nota": null
+  },
+  {
+    "id": 5,
+    "nombre": "Sofía Ramos",
+    "nota": null
+  },
+  {
+    "id": 6,
+    "nombre": "Javier López",
+    "nota": null
+  },
+  {
+    "id": 7,
+    "nombre": "Elena Torres",
+    "nota": null
+  },
+  {
+    "id": 8,
+    "nombre": "David Castro",
+    "nota": null
+  },
+  {
+    "id": 9,
+    "nombre": "Laura Ruiz",
+    "nota": 8.8
+  },
+  {
+    "id": 10,
+    "nombre": "Andrés Flores",
+    "nota": 6.2
+  }
+]

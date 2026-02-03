@@ -23,7 +23,7 @@
     <header class="flex-shrink-0 bg-dark-subtle">
         <nav class="navbar navbar-expand-md -position-fixed -w-100 pe-md-4">
             <div class="container-fluid">
-                <a class="navbar-brand" href="/index.html">
+                <a class="navbar-brand" href="index.html">
                     <i class="fas fa-home"></i>
                     Prácticas TS
                 </a>
@@ -91,9 +91,9 @@
         <section class="py-4 d-flex flex-column align-items-center">
             <header class="d-flex flex-row justify-content-around align-items-center">
                 <h1>Rango de notas</h1>
-                <i class="fas fa-info mx-3 helper pointer"></i>
+                <i class="fas fa-info mx-3 helper pointer pb-3 pt-3 pe-3 ps-0"></i>
                 <p
-                    class="justify-content-center d-none fixed-top top-25 start-50 bg-light border border-dark p-2 rounded d-flex flex-grow-0 align-self-baseline w-25">
+                    class="justify-content-center d-none fixed-top top-25 start-50 bg-light border border-dark p-2 rounded d-flex flex-grow-0 align-self-baseline w-25 flex-shrink-0">
                     [90 a 100] Excelente<br>
                     [75 a 89] Bueno<br>
                     [51 a 74] Regular<br>
@@ -101,6 +101,14 @@
                 </p>
             </header>
             <form class="d-flex justify-content-evenly align-items-end gap-3">
+                <Label for="nombresInput">Nombre:
+                    <select name="nombresInput" id="nombresInput" class="form-select">
+                        <option value="" disabled selected>Selecciona un nombre</option>
+                        <!-- <option value=1>Estudiante Uno</option>
+                        <option value=2>Estudiante Dos</option> -->
+                        <option value=3>Estudiante Tres</option>
+                    </select>
+                </Label>
                 <label for="notaInput">Puntaje:
                     <input type="number" id="notaInput" class="form-control" placeholder="Ingresa la nota aquí">
                     <small class="form-text text-danger d-none">Por favor ingresa un número válido entre 0 y
